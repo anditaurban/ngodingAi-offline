@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngoding Pakai AI - Merdeka di Setiap Kode!</title>
+    <meta name="description"
+        content="Kursus Ngoding Pakai AI, belajar coding dengan bantuan AI, bangun project website dalam 7 jam. Daftar sekarang!">
+    <meta name="keywords"
+        content="Ngoding Pakai AI, kursus coding, AI coding, ChatGPT, GitHub Copilot, kursus offline, belajar ngoding, workshop AI, coding dengan AI">
+    <meta name="author" content="Inovasia Digital Academy">
+    <link rel="icon" href="assets/img/ngodingai17-logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/img/ngodingai17-logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/tracklog.js"></script>
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = 'https://connect.facebook.net/en_US/fbevents.js';
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script');
+
+        fbq('init', '659512993547676');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=659512993547676&ev=PageView&noscript=1" />
+    </noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50">
+    <!-- header -->
+    <header class="bg-white shadow-lg border-b-4 border-red-600">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2 sm:space-x-3 px-2 sm:px-0">
+                    <!-- Logo -->
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center flex-shrink-0">
+                        <img src="assets/img/ngodingai17-logo.png" alt="logo" class="w-full h-full object-contain">
+                    </div>
+
+                    <!-- Teks -->
+                    <div class="min-w-0">
+                        <h1 class="text-sm sm:text-lg md:text-xl font-bold text-gray-900 leading-snug">
+                            NgodingAI By Inovasia Digital Academy
+                        </h1>
+                        <p class="text-[10px] sm:text-xs md:text-sm text-red-600">
+                            Merdeka di Setiap Kode!
+                        </p>
+                    </div>
+                </div>
+                <a href="#registration" onclick="trackingLog('Forward to section registration','Daftar @header')"
+                    class="cta-button cta-button-pulse inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-colors text-sm sm:text-base lg:text-lg leading-none px-[1em] py-[0.6em]">
+                    Daftar
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- hero -->
+    <section class="coding-bg relative py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-black/10 z-10"></div>
+        <div class="container mx-auto px-4 relative z-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 text-white">
+                    <div class="space-y-4">
+                        <div
+                            class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">
+                            <i class="fas fa-star"></i>
+                            <span>Kursus Offline Eksklusif</span>
+                        </div>
+                        <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                            <span class="text-yellow-300">Ngoding Pakai AI</span>
+                            <br>
+                            <span class="text-white">
+                                Merdeka di Setiap Kode!
+                            </span>
+                        </h1>
+                        <p class="text-xl text-white/90 leading-relaxed">
+                            Rayakan kemerdekaan dengan karya nyata. Belajar ngoding pakai AI, bangun project website
+                            dalam 7 Jam, saatnya merdeka dari coding manual!
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 sm:gap-4">
+                        <div class="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm md:text-base">
+                            <i class="fas fa-clock text-yellow-300 text-sm sm:text-base md:text-lg"></i>
+                            <span class="font-semibold text-white">7 Jam Intensif</span>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm md:text-base">
+                            <i class="fas fa-users text-yellow-300 text-sm sm:text-base md:text-lg"></i>
+                            <span class="font-semibold text-white">Kelas Offline</span>
+                        </div>
+                        <div class="flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm md:text-base">
+                            <i class="fas fa-map-marker-alt text-yellow-300 text-sm sm:text-base md:text-lg"></i>
+                            <span class="font-semibold text-white">Bogor</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#registration" onclick="trackingLog('Forward to section registration','Daftar @hero')"
+                            class="inline-flex items-center justify-center gap-2 cta-button cta-button-pulse bg-yellow-500 hover:bg-yellow-600 text-sm sm:text-base lg:text-lg px-[1em] py-[1.3em] rounded-lg font-semibold transition-colors leading-none">
+                            <i class="fas fa-rocket icon-animate"></i>
+                            Daftar Sekarang - Rp 178.450
+                        </a>
+
+                        <a href="#timeline"
+                            class="inline-flex items-center justify-center gap-2 border-2 border-white text-white hover:bg-white hover:text-red-600 font-semibold rounded-lg transition-colors bg-transparent text-sm sm:text-base lg:text-lg leading-none px-[1em] py-[0.6em]">
+                            Lihat Detail Kursus
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-white shadow-2xl border border-white/20">
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-2xl font-bold">Jadwal Kursus</h3>
+                                <i class="fas fa-calendar-alt text-2xl"></i>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="bg-white/10 rounded-lg p-4 border-l-4 border-yellow-300">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-semibold text-yellow-300">Batch 1</span>
+                                        <span
+                                            class="text-sm bg-yellow-300 text-red-800 px-2 py-1 rounded">Tersedia</span>
+                                    </div>
+                                    <div class="text-sm space-y-1">
+                                        <p><strong>16 Agustus 2025</strong> • 09:00 - 17:00 WIB</p>
+                                        <p>Sisa kursi: <span class="text-yellow-300 font-semibold">Habis</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white/10 rounded-lg p-4 border-l-4 border-green-300">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-semibold text-green-300">Batch 2</span>
+                                        <span
+                                            class="text-sm bg-green-300 text-red-800 px-2 py-1 rounded">Tersedia</span>
+                                    </div>
+                                    <div class="text-sm space-y-1">
+                                        <p><strong>23 Agustus 2025</strong> • 09:00 - 17:00 WIB</p>
+                                        <p>Sisa kursi: <span class="text-green-300 font-semibold">15 dari 30</span></p>
+                                    </div>
+                                </div>
+
+                                <div class="bg-white/10 rounded-lg p-4 border-l-4 border-blue-300">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-semibold text-blue-300">Batch 3</span>
+                                        <span class="text-sm bg-blue-300 text-red-800 px-2 py-1 rounded">Tersedia</span>
+                                    </div>
+                                    <div class="text-sm space-y-1">
+                                        <p><strong>30 Agustus 2025</strong> • 09:00 - 17:00 WIB</p>
+                                        <p>Sisa kursi: <span class="text-blue-300 font-semibold">22 dari 30</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <p class="text-sm opacity-90">📍 Lokasi: Bogor</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="absolute -top-4 -right-4 w-24 h-24 bg-white/10 rounded-full"></div>
+                    <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-white/20 rounded-full"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- why choose us -->
+    <section id="why-choose-us" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Mengapa Memilih Kursus Ini?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Dapatkan kemerdekaan dalam coding dengan bantuan AI yang revolusioner
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="border-2 border-gray-100 hover:border-red-200 transition-colors rounded-lg p-6 text-center">
+                    <div
+                        class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center text-red-600 mb-4 mx-auto">
+                        <i class="fas fa-bolt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI-Powered Coding</h3>
+                    <p class="text-gray-600">
+                        Pelajari cara menggunakan ChatGPT, GitHub Copilot, dan tools AI lainnya untuk coding yang lebih
+                        efisien
+                    </p>
+                </div>
+
+                <div class="border-2 border-gray-100 hover:border-red-200 transition-colors rounded-lg p-6 text-center">
+                    <div
+                        class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center text-red-600 mb-4 mx-auto">
+                        <i class="fas fa-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Hands-on Practice</h3>
+                    <p class="text-gray-600">
+                        7 jam praktek langsung dengan project nyata menggunakan AI untuk berbagai bahasa pemrograman
+                    </p>
+                </div>
+
+                <div class="border-2 border-gray-100 hover:border-red-200 transition-colors rounded-lg p-6 text-center">
+                    <div
+                        class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center text-red-600 mb-4 mx-auto">
+                        <i class="fas fa-trophy text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sertifikat Resmi</h3>
+                    <p class="text-gray-600">
+                        Dapatkan sertifikat kelulusan yang diakui industri sebagai bukti kemampuan AI coding Anda
+                    </p>
+                </div>
+
+                <div class="border-2 border-gray-100 hover:border-red-200 transition-colors rounded-lg p-6 text-center">
+                    <div
+                        class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center text-red-600 mb-4 mx-auto">
+                        <i class="fas fa-users text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Mentor Berpengalaman</h3>
+                    <p class="text-gray-600">
+                        Dibimbing langsung oleh praktisi AI dan senior developer dengan pengalaman 10+ tahun
+                    </p>
+                </div>
+
+                <div class="border-2 border-gray-100 hover:border-red-200 transition-colors rounded-lg p-6 text-center">
+                    <div
+                        class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center text-red-600 mb-4 mx-auto">
+                        <i class="fas fa-star text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Materi Terkini</h3>
+                    <p class="text-gray-600">
+                        Kurikulum selalu update mengikuti perkembangan terbaru teknologi AI untuk programming
+                    </p>
+                </div>
+
+                <div class="border-2 border-gray-100 hover:border-red-200 transition-colors rounded-lg p-6 text-center">
+                    <div
+                        class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center text-red-600 mb-4 mx-auto">
+                        <i class="fas fa-check-circle text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Lifetime Support</h3>
+                    <p class="text-gray-600">
+                        Akses grup komunitas dan konsultasi selamanya setelah menyelesaikan kursus
+                    </p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#registration" onclick="trackingLog('Forward to section registration', 'Daftar @why-choose-us')"
+                    class="cta-button cta-button-shimmer bg-red-600 hover:bg-red-700 text-white 
+              px-4 py-2 text-base 
+              sm:px-6 sm:py-3 sm:text-lg 
+              md:px-8 md:py-4 md:text-xl 
+              rounded-lg font-semibold transition-colors shadow-lg">
+                    <i class="fas fa-rocket icon-animate mr-2"></i>
+                    Daftar Sekarang - Rp 178.450
+                </a>
+
+                <p class="text-base sm:text-lg md:text-xl text-gray-500 mt-5">
+                    *Harga spesial <strong>kemerdekaan</strong>.
+                    <span class="line-through text-red-400">Rp 375.000</span>
+                    sekarang hanya <strong>Rp 178.450</strong>!
+                    <span
+                        class="bg-yellow-400 text-red-800 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm md:text-base font-bold">
+                        HEMAT 52%
+                    </span>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- gallery -->
+    <section id="gallery" class="py-20 bg-gradient-to-br from-red-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Galeri Workshop Sebelumnya</h2>
+                <p class="text-xl text-gray-600">
+                    Lihat suasana seru dan antusiasme peserta di workshop AI coding kami
+                </p>
+            </div>
+
+            <div class="gallery-slider relative max-w-6xl mx-auto">
+                <div class="gallery-slides" id="gallerySlides">
+                    <div class="gallery-slide">
+                        <div
+                            class="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <img src="assets/img/1.jpg" alt="Suasana Workshop AI Coding"
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                                <i
+                                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                                <p class="text-white text-sm font-medium">Suasana Kelas Interaktif</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <img src="assets/img/2.jpeg" alt="Peserta Antusias Belajar"
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                                <i
+                                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                                <p class="text-white text-sm font-medium">Peserta Antusias Belajar</p>
+                            </div>
+                        </div>
+
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <img src="assets/img/3.jpeg" alt="Mentor Menjelaskan ChatGPT"
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                                <i
+                                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                                <p class="text-white text-sm font-medium">Mentor Menjelaskan ChatGPT</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-slide">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <img src="assets/img/4.jpg" alt="Hands On GitHub Copilot"
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                                <i
+                                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                                <p class="text-white text-sm font-medium">Hands-On GitHub Copilot</p>
+                            </div>
+                        </div>
+
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <img src="assets/img/5.png" alt="Project Workshop Session"
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                                <i
+                                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                                <p class="text-white text-sm font-medium">Project Workshop Session</p>
+                            </div>
+                        </div>
+
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <img src="assets/img/6.png" alt="Sertifikat Kelulusan"
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                                <i
+                                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                                <p class="text-white text-sm font-medium">Pembagian Sertifikat</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-slide">
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <img src="assets/img/7.jpg" alt="Networking Session"
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                                <i
+                                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                                <p class="text-white text-sm font-medium">Networking Session</p>
+                            </div>
+                        </div>
+
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <img src="assets/img/8.jpg" alt="Foto Bersama Peserta"
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                                <i
+                                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                                <p class="text-white text-sm font-medium">Foto Bersama Peserta</p>
+                            </div>
+                        </div>
+
+                        <div class="relative group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                            <img src="assets/img/9.jpg" alt="Suasana Diskusi Kelompok"
+                                class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div
+                                class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                                <i
+                                    class="fas fa-search-plus text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                                <p class="text-white text-sm font-medium">Suasana Diskusi Kelompok</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="gallery-nav-btn prev" onclick="prevSlide()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="gallery-nav-btn next" onclick="nextSlide()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div class="gallery-dots">
+                    <div class="gallery-dot active" onclick="currentSlide(1)"></div>
+                    <div class="gallery-dot" onclick="currentSlide(2)"></div>
+                    <div class="gallery-dot" onclick="currentSlide(3)"></div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <div class="bg-gradient-to-r from-red-50 to-red-100 rounded-2xl 
+                p-4 sm:p-6 md:p-8 
+                max-w-6xl mx-auto">
+
+                    <!-- Judul -->
+                    <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                        Bergabung dengan Alumni Sukses!
+                    </h3>
+
+                    <!-- Deskripsi -->
+                    <p class="text-sm sm:text-base md:text-lg text-gray-600 mb-6">
+                        Jadilah bagian dari komunitas developer yang sudah merasakan kemerdekaan coding dengan AI
+                    </p>
+
+                    <!-- Tombol -->
+                    <a href="#registration" onclick="trackingLog('Forward to section registration', 'Daftar @gallery')" class="cta-button cta-button-bounce bg-red-600 hover:bg-red-700 text-white 
+                  px-4 py-2 text-base 
+                  sm:px-6 sm:py-3 sm:text-lg 
+                  md:px-8 md:py-4 md:text-xl 
+                  rounded-lg font-semibold transition-colors shadow-lg">
+                        <i class="fas fa-rocket icon-animate mr-2"></i>
+                        Daftar Sekarang - Rp 178.450
+                    </a>
+
+                    <!-- Harga & Badge -->
+                    <p class="text-base sm:text-lg md:text-xl text-gray-500 mt-5">
+                        *Harga spesial <strong>kemerdekaan</strong>.
+                        <span class="line-through text-red-400">Rp 375.000</span>
+                        sekarang hanya <strong>Rp 178.450</strong>!
+                        <span class="bg-yellow-400 text-red-800 
+                         px-2 py-0.5 
+                         sm:px-3 sm:py-1 
+                         rounded-full 
+                         text-xs sm:text-sm md:text-base 
+                         font-bold">
+                            HEMAT 52%
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- timeline -->
+    <section id="timeline" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Timeline Materi Workshop (7 Jam)</h2>
+                <p class="text-xl text-gray-600">Kurikulum lengkap dari pengenalan hingga hands-on project</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="space-y-8">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-red-600 relative">
+                        <div
+                            class="absolute -left-6 top-8 w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            1
+                        </div>
+                        <div class="ml-8">
+                            <div class="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+                                <div
+                                    class="bg-red-100 text-red-800 px-6 py-3 rounded-lg font-bold text-lg whitespace-nowrap">
+                                    Sesi 1 (1 Jam)
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-2xl font-bold text-gray-900">Pengenalan AI dalam Coding</h3>
+                                    <p class="text-gray-600 mt-2">Memahami dasar-dasar AI untuk programming dan setup
+                                        tools</p>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-3">
+                                    <h4 class="font-semibold text-gray-900 mb-3">📚 Materi Pembelajaran:</h4>
+                                    <div class="space-y-2">
+                                        <div class="flex items-start space-x-3">
+                                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                            <span class="text-gray-700">Apa itu AI dalam programming?</span>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                            <span class="text-gray-700">Perbedaan AI-assisted coding vs AI-generated
+                                                code</span>
+                                        </div>
+                                        <div class="flex items-start space-x-3">
+                                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                                            <span class="text-gray-700">Instalasi dan setup (Opsional)</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-3">
+                                    <h4 class="font-semibold text-gray-900 mb-3">🛠️ Tools AI yang Dipelajari:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span
+                                            class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">ChatGPT</span>
+                                        <span
+                                            class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">GitHub
+                                            Copilot</span>
+                                        <span
+                                            class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-medium">Blackbox
+                                            AI</span>
+                                        <span
+                                            class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">V0</span>
+                                        <span
+                                            class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">DeepSeek</span>
+                                        <span
+                                            class="bg-pink-100 text-pink-800 px-3 py-1 rounded-full text-sm font-medium">Dan
+                                            lainnya</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-blue-600 relative">
+                        <div
+                            class="absolute -left-6 top-8 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            2
+                        </div>
+                        <div class="ml-8">
+                            <div class="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+                                <div
+                                    class="bg-blue-100 text-blue-800 px-6 py-3 rounded-lg font-bold text-lg whitespace-nowrap">
+                                    Sesi 2 (3 Jam)
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-2xl font-bold text-gray-900">Membuat Project dengan Bantuan AI</h3>
+                                    <p class="text-gray-600 mt-2">Hands-on membuat website lengkap dengan fitur CRUD dan
+                                        API</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-6">
+                                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6">
+                                    <h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+                                        <i class="fas fa-laptop-code text-blue-600 mr-2"></i>
+                                        Project: Website Informatif / Online Store
+                                    </h4>
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div>
+                                            <h5 class="font-medium text-gray-800 mb-3">Frontend Development:</h5>
+                                            <div class="space-y-2">
+                                                <div class="flex items-start space-x-3">
+                                                    <i class="fas fa-arrow-right text-blue-500 mt-1 text-sm"></i>
+                                                    <span class="text-gray-700 text-sm">Membuat desain wireframe dengan
+                                                        AI</span>
+                                                </div>
+                                                <div class="flex items-start space-x-3">
+                                                    <i class="fas fa-arrow-right text-blue-500 mt-1 text-sm"></i>
+                                                    <span class="text-gray-700 text-sm">Generasi kode HTML Responsive &
+                                                        TailwindCSS</span>
+                                                </div>
+                                                <div class="flex items-start space-x-3">
+                                                    <i class="fas fa-arrow-right text-blue-500 mt-1 text-sm"></i>
+                                                    <span class="text-gray-700 text-sm">Menambahkan fitur Create, Read,
+                                                        Update, Delete</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <h5 class="font-medium text-gray-800 mb-3">Backend Development:</h5>
+                                            <div class="space-y-2">
+                                                <div class="flex items-start space-x-3">
+                                                    <i class="fas fa-arrow-right text-blue-500 mt-1 text-sm"></i>
+                                                    <span class="text-gray-700 text-sm">Membuat API sederhana (AppScript
+                                                        / Node.js + Express)</span>
+                                                </div>
+                                                <div class="flex items-start space-x-3">
+                                                    <i class="fas fa-arrow-right text-blue-500 mt-1 text-sm"></i>
+                                                    <span class="text-gray-700 text-sm">Debugging dengan AI</span>
+                                                </div>
+                                                <div class="flex items-start space-x-3">
+                                                    <i class="fas fa-arrow-right text-blue-500 mt-1 text-sm"></i>
+                                                    <span class="text-gray-700 text-sm">Testing dan optimasi
+                                                        performa</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-2">
+                                    <span
+                                        class="bg-orange-100 text-orange-800 px-3 py-2 rounded-lg text-sm font-medium">
+                                        <i class="fab fa-html5 mr-1"></i>HTML5
+                                    </span>
+                                    <span class="bg-blue-100 text-blue-800 px-3 py-2 rounded-lg text-sm font-medium">
+                                        <i class="fab fa-css3-alt mr-1"></i>CSS3
+                                    </span>
+                                    <span
+                                        class="bg-yellow-100 text-yellow-800 px-3 py-2 rounded-lg text-sm font-medium">
+                                        <i class="fab fa-js-square mr-1"></i>JavaScript
+                                    </span>
+                                    <span class="bg-cyan-100 text-cyan-800 px-3 py-2 rounded-lg text-sm font-medium">
+                                        <i class="fas fa-wind mr-1"></i>TailwindCSS
+                                    </span>
+                                    <span class="bg-green-100 text-green-800 px-3 py-2 rounded-lg text-sm font-medium">
+                                        <i class="fab fa-node-js mr-1"></i>Node.js
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-green-600 relative">
+                        <div
+                            class="absolute -left-6 top-8 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                            3
+                        </div>
+                        <div class="ml-8">
+                            <div class="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+                                <div
+                                    class="bg-green-100 text-green-800 px-6 py-3 rounded-lg font-bold text-lg whitespace-nowrap">
+                                    Sesi 3 (3 Jam)
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-2xl font-bold text-gray-900">Hands-on dan Challenge</h3>
+                                    <p class="text-gray-600 mt-2">Praktek mandiri dengan bimbingan mentor dan sesi tanya
+                                        jawab</p>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-3 gap-6">
+                                <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg p-6 text-center">
+                                    <div
+                                        class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <i class="fas fa-user-cog text-green-600 text-2xl"></i>
+                                    </div>
+                                    <h4 class="font-semibold text-gray-900 mb-2">Project Pribadi</h4>
+                                    <p class="text-gray-600 text-sm">Peserta membuat project pribadi dengan bantuan AI
+                                        sesuai kebutuhan masing-masing</p>
+                                </div>
+
+                                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-lg p-6 text-center">
+                                    <div
+                                        class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <i class="fas fa-bug text-blue-600 text-2xl"></i>
+                                    </div>
+                                    <h4 class="font-semibold text-gray-900 mb-2">Live Debugging</h4>
+                                    <p class="text-gray-600 text-sm">Debugging real-time dan optimasi kode dengan
+                                        bantuan AI dan mentor</p>
+                                </div>
+
+                                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg p-6 text-center">
+                                    <div
+                                        class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <i class="fas fa-comments text-purple-600 text-2xl"></i>
+                                    </div>
+                                    <h4 class="font-semibold text-gray-900 mb-2">Q & A Session</h4>
+                                    <p class="text-gray-600 text-sm">Tanya jawab dan sharing best practices penggunaan
+                                        AI untuk coding</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                                <div class="flex items-start space-x-3">
+                                    <i class="fas fa-lightbulb text-yellow-600 mt-1"></i>
+                                    <div>
+                                        <h5 class="font-semibold text-yellow-800 mb-1">Bonus Materi:</h5>
+                                        <p class="text-yellow-700 text-sm">Tips & tricks mengoptimalkan workflow
+                                            development dengan AI, resource pembelajaran lanjutan, dan akses ke
+                                            komunitas alumni</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 text-white text-center">
+                    <h3 class="text-2xl font-bold mb-4">🎯 Hasil Akhir Workshop</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div>
+                            <div class="text-3xl font-bold mb-2">1</div>
+                            <p class="text-red-100">Website Lengkap dengan CRUD & API</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold mb-2">6+</div>
+                            <p class="text-red-100">AI Tools yang Dikuasai</p>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold mb-2">∞</div>
+                            <p class="text-red-100">Skill AI Coding untuk Masa Depan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-8 sm:mt-10 lg:mt-12">
+                    <div
+                        class="bg-white rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border-2 border-red-200 max-w-5xl mx-auto">
+
+                        <!-- Judul -->
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
+                            Siap Menguasai AI Coding?
+                        </h3>
+
+                        <!-- Deskripsi -->
+                        <p class="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6">
+                            Dapatkan skill yang akan mengubah karir programming Anda selamanya
+                        </p>
+
+                        <!-- Tombol -->
+                        <a href="#registration" onclick="trackingLog('Forward to section registration', 'Daftar @timeline')"
+                            class="cta-button cta-button-glow bg-red-600 hover:bg-red-700 text-white px-5 py-3 sm:px-6 sm:py-3.5 md:px-8 md:py-4 text-base sm:text-lg md:text-xl rounded-lg font-semibold transition-colors shadow-lg inline-flex items-center">
+                            <i class="fas fa-rocket icon-animate mr-1.5 sm:mr-2"></i>
+                            Daftar Sekarang - Rp 178.450
+                        </a>
+
+                        <!-- Harga -->
+                        <p class="text-lg sm:text-xl md:text-2xl text-gray-500 mt-4 sm:mt-5">
+                            *Harga spesial <strong>kemerdekaan</strong>.
+                            <span class="line-through text-red-400">Rp 375.000</span> sekarang hanya
+                            <strong>Rp 178.450</strong>!
+                            <span
+                                class="bg-yellow-400 text-red-800 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold">HEMAT
+                                52%</span>
+                        </p>
+
+                        <!-- Benefit -->
+                        <p class="text-xs sm:text-sm md:text-base text-gray-500 mt-2 sm:mt-3">
+                            ✅ Sertifikat ✅ Lifetime support ✅ Materi terkini
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- testimonials -->
+    <section id="testimonials" class="py-20 bg-gradient-to-br from-red-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Kata Mereka yang Sudah Merdeka</h2>
+                <p class="text-xl text-gray-600">
+                    Testimoni dari alumni yang sudah merasakan kemerdekaan coding dengan AI
+                </p>
+            </div>
+
+            <div class="testimonial-slider relative">
+                <div class="testimonial-slides" id="testimonialSlides">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="flex mb-4">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic text-lg leading-relaxed">"Kursus ini benar-benar
+                                mengubah cara saya coding. Produktivitas meningkat 300%! Sekarang saya bisa
+                                menyelesaikan project dalam waktu yang jauh lebih singkat."</p>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                    BS
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Budi Santoso</p>
+                                    <p class="text-sm text-gray-500">Full Stack Developer • Jakarta</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="flex mb-4">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic text-lg leading-relaxed">"Materi sangat praktis dan
+                                langsung bisa diterapkan. Worth every penny! Mentornya juga sangat sabar dalam
+                                menjelaskan konsep AI untuk coding."</p>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                    SD
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Sari Dewi</p>
+                                    <p class="text-sm text-gray-500">Frontend Developer • Bandung</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="flex mb-4">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic text-lg leading-relaxed">"Mentornya sangat
+                                berpengalaman. 7 jam terasa singkat karena seru banget! Sekarang saya lebih percaya diri
+                                menggunakan AI tools untuk development."</p>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                    AR
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Ahmad Rizki</p>
+                                    <p class="text-sm text-gray-500">Backend Developer • Surabaya</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="flex mb-4">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic text-lg leading-relaxed">"Investasi terbaik untuk karir
+                                developer! Setelah kursus ini, gaji saya naik 50% karena skill AI coding yang saya
+                                pelajari di sini."</p>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                    LM
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Lisa Maharani</p>
+                                    <p class="text-sm text-gray-500">Mobile Developer • Yogyakarta</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="flex mb-4">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic text-lg leading-relaxed">"Kursus yang sangat
+                                komprehensif! Dari ChatGPT sampai GitHub Copilot, semua dijelaskan dengan detail.
+                                Sekarang coding jadi lebih efisien dan menyenangkan."</p>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                    DF
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Doni Firmansyah</p>
+                                    <p class="text-sm text-gray-500">DevOps Engineer • Medan</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card">
+                            <div class="flex mb-4">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <p class="text-gray-600 mb-6 italic text-lg leading-relaxed">"Komunitas alumni yang
+                                supportif dan materi yang selalu update. Bahkan setelah kursus selesai, masih bisa
+                                konsultasi dan sharing pengalaman."</p>
+                            <div class="flex items-center">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                                    RP
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Rina Pratiwi</p>
+                                    <p class="text-sm text-gray-500">UI/UX Developer • Semarang</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="testimonial-nav-btn prev" onclick="prevTestimonialSlide()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="testimonial-nav-btn next" onclick="nextTestimonialSlide()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="testimonial-dots">
+                    <div class="testimonial-dot active" onclick="currentTestimonialSlide(1)"></div>
+                    <div class="testimonial-dot" onclick="currentTestimonialSlide(2)"></div>
+                    <div class="testimonial-dot" onclick="currentTestimonialSlide(3)"></div>
+                </div>
+            </div>
+            <div class="text-center mt-8 sm:mt-10 lg:mt-12">
+                <div
+                    class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-4 sm:p-6 md:p-8 max-w-5xl mx-auto border border-yellow-200">
+
+                    <!-- Judul -->
+                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
+                        Rasakan Sendiri Pengalaman Luar Biasa Ini!
+                    </h3>
+
+                    <!-- Deskripsi -->
+                    <p class="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6">
+                        Bergabunglah dengan ribuan developer yang sudah merasakan transformasi coding dengan AI
+                    </p>
+
+                    <!-- Tombol -->
+                    <a href="#registration" onclick="trackingLog('Forward to section registration', 'Daftar @testimonials')"
+                        class="cta-button cta-button-glow bg-red-600 hover:bg-red-700 text-white px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 text-base sm:text-lg rounded-lg font-semibold transition-colors shadow-lg inline-flex items-center justify-center">
+                        <i class="fas fa-rocket icon-animate mr-2"></i>
+                        Daftar Sekarang - Rp 178.450
+                    </a>
+
+                    <!-- Info Harga -->
+                    <p class="text-sm sm:text-lg md:text-xl text-gray-500 mt-4 sm:mt-5">
+                        *Harga spesial <strong>kemerdekaan</strong>.
+                        <span class="line-through text-red-400">Rp 375.000</span>
+                        sekarang hanya <strong>Rp 178.450</strong>!
+                        <span
+                            class="bg-yellow-400 text-red-800 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold">
+                            HEMAT 52%
+                        </span>
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- registration -->
+    <section id="registration" class="py-20 bg-white">  
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Pilih Jadwal yang Cocok untuk Anda</h2>
+                <p class="text-xl text-gray-600">3 batch tersedia di bulan Agustus 2025</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-lg border-2 border-yellow-200 hover:border-yellow-400 transition-colors relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-yellow-400 text-yellow-900 px-4 py-2 rounded-full text-sm font-bold">BATCH
+                            1</span>
+                    </div>
+                    <div class="text-center space-y-4 mt-4">
+                        <div class="text-4xl font-bold text-gray-900">16</div>
+                        <div class="text-lg text-gray-600">Agustus 2025</div>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <p><i class="fas fa-clock text-yellow-500 mr-2"></i>09:00 - 17:00 WIB</p>
+                            <p><i class="fas fa-map-marker-alt text-yellow-500 mr-2"></i>Bogor</p>
+                            <p><i class="fas fa-users text-yellow-500 mr-2"></i>Habis</p>
+                        </div>
+                       <button
+                            class="w-full bg-gray-500 hover:bg-gray-600 text-white py-3 rounded-lg font-semibold">
+                            <i class="fas fa-calendar-check icon-animate mr-2"></i>
+                            Kuota Habis
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-lg border-2 border-green-200 hover:border-green-400 transition-colors relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-green-400 text-green-900 px-4 py-2 rounded-full text-sm font-bold">BATCH
+                            2</span>
+                    </div>
+                    <div class="text-center space-y-4 mt-4">
+                        <div class="text-4xl font-bold text-gray-900">23</div>
+                        <div class="text-lg text-gray-600">Agustus 2025</div>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <p><i class="fas fa-clock text-green-500 mr-2"></i>09:00 - 17:00 WIB</p>
+                            <p><i class="fas fa-map-marker-alt text-green-500 mr-2"></i>Bogor</p>
+                            <p><i class="fas fa-users text-green-500 mr-2"></i>15 kursi tersisa</p>
+                        </div>
+                        <button onclick="trackBatchSelection(2,'Batch 23 Agustus 2025'); trackingLog('Open Form Registration','Click Batch 2');"
+                            class="cta-button cta-button-bounce w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                            <i class="fas fa-calendar-check icon-animate mr-2"></i>
+                            Pilih Batch Ini
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-200 hover:border-blue-400 transition-colors relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-blue-400 text-blue-900 px-4 py-2 rounded-full text-sm font-bold">BATCH 3</span>
+                    </div>
+                    <div class="text-center space-y-4 mt-4">
+                        <div class="text-4xl font-bold text-gray-900">30</div>
+                        <div class="text-lg text-gray-600">Agustus 2025</div>
+                        <div class="space-y-2 text-sm text-gray-600">
+                            <p><i class="fas fa-clock text-blue-500 mr-2"></i>09:00 - 17:00 WIB</p>
+                            <p><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>Bogor</p>
+                            <p><i class="fas fa-users text-blue-500 mr-2"></i>22 kursi tersisa</p>
+                        </div>
+                        <button onclick="trackBatchSelection(3,'Batch 30 Agustus 2025'); trackingLog('Open Form Registration','Click Batch 3');"
+                            class="cta-button cta-button-bounce w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                            <i class="fas fa-calendar-check icon-animate mr-2"></i>
+                            Pilih Batch Ini
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8 sm:mt-10 lg:mt-12">
+                <div
+                    class="bg-red-100 border border-red-300 rounded-lg p-4 sm:p-5 md:p-6 max-w-md sm:max-w-lg md:max-w-2xl mx-auto">
+
+                    <!-- Judul -->
+                    <p
+                        class="text-sm sm:text-base md:text-lg font-semibold text-red-800 mb-2 flex items-center justify-center">
+                        <i class="fas fa-fire text-red-600 mr-2 text-base sm:text-lg md:text-xl"></i>
+                        Harga Spesial Kemerdekaan!
+                    </p>
+
+                    <!-- Harga -->
+                    <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-2">
+                        <span class="text-lg sm:text-xl md:text-2xl font-bold text-red-800">
+                            Rp 178.450
+                        </span>
+                        <span class="text-sm sm:text-base md:text-lg text-gray-500 line-through">
+                            Rp 375.000
+                        </span>
+                        <span
+                            class="bg-red-600 text-white px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-bold">
+                            HEMAT 52%
+                        </span>
+                    </div>
+
+                    <!-- Catatan -->
+                    <p class="text-[10px] sm:text-xs md:text-sm text-red-600">
+                        *Berlaku untuk semua batch. Promo terbatas!
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="py-20 bg-gradient-to-r from-red-600 to-red-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto space-y-8">
+                <h2 class="text-3xl md:text-5xl font-bold">Saatnya Merdeka dari Coding Manual!</h2>
+                <p class="text-xl opacity-90">
+                    Bergabunglah dengan revolusi AI coding dan rasakan kemerdekaan dalam setiap baris kode yang Anda
+                    tulis.
+                </p>
+
+                <div class="bg-white/10 rounded-2xl p-8 backdrop-blur-sm">
+                    <div class="grid md:grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-3xl font-bold">7</div>
+                            <div class="text-sm opacity-80">Jam Intensif</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold">30</div>
+                            <div class="text-sm opacity-80">Peserta Maksimal</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold">100%</div>
+                            <div class="text-sm opacity-80">Praktek Langsung</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-3 sm:space-y-4 text-center">
+
+                    <!-- Tombol Daftar -->
+                    <a href="#registration" onclick="trackingLog('Forward to section registration', 'Daftar @cta')"
+                        class="cta-button cta-button-gradient px-6 py-3 sm:px-10 sm:py-4 text-base sm:text-lg md:text-xl font-semibold rounded-lg transition-colors inline-flex items-center justify-center w-full sm:w-auto">
+                        <i class="fas fa-rocket icon-animate mr-2 text-sm sm:text-base md:text-lg"></i>
+                        Daftar Sekarang - Rp 178.450
+                    </a>
+
+                    <!-- Info Harga -->
+                    <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+                        <span class="text-xs sm:text-sm opacity-80">Harga spesial kemerdekaan.</span>
+                        <span class="text-xs sm:text-sm line-through opacity-60">Rp 375.000</span>
+                        <span
+                            class="bg-yellow-400 text-red-800 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold">HEMAT
+                            52%</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- location -->
+    <section id="location" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Lokasi Workshop</h2>
+                <p class="text-xl text-gray-600">Temukan kami di lokasi yang strategis dan mudah dijangkau</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <div class="grid lg:grid-cols-2 gap-0">
+                        <div class="h-96 lg:h-auto">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.1438627681196!2d106.7945517!3d-6.503466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c3257f661999%3A0x674c9939db33174b!2sToko%20ATK%20DKiDS%20Media!5e0!3m2!1sid!2sid!4v1741588263871!5m2!1sid!2sid"
+                                width="100%" height="100%" style="border:0; min-height: 400px;" allowfullscreen=""
+                                loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+
+                        <div class="p-8 lg:p-12 flex flex-col justify-center">
+                            <div class="space-y-6">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Informasi Lokasi</h3>
+                                    <div class="space-y-4">
+                                        <div class="flex items-start space-x-3">
+                                            <div
+                                                class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-map-marker-alt text-red-600"></i>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold text-gray-900">Alamat Lengkap</p>
+                                                <p class="text-gray-600 text-sm leading-relaxed">
+                                                    Ruko Pesona Darussalam Blok A3/1 Lt.2<br>
+                                                    Waringin Jaya, Kecamatan Bojonggede<br>
+                                                    Kabupaten Bogor, Jawa Barat 16920
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex items-start space-x-3">
+                                            <div
+                                                class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-car text-blue-600"></i>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold text-gray-900">Akses Transportasi</p>
+                                                <p class="text-gray-600 text-sm">
+                                                    Mudah dijangkau dengan kendaraan pribadi dan transportasi umum
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex items-start space-x-3">
+                                            <div
+                                                class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                                                <i class="fas fa-parking text-green-600"></i>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold text-gray-900">Fasilitas Parkir</p>
+                                                <p class="text-gray-600 text-sm">
+                                                    Area parkir luas dan aman untuk peserta workshop
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4 border-t border-gray-200">
+                                    <a href="https://maps.google.com/?q=Ruko+Pesona+Darussalam+Blok+A3/1+Lt.2,+Waringin+Jaya,+Bojonggede,+Bogor"
+                                        target="_blank"
+                                        class="inline-flex items-center space-x-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                                        <i class="fas fa-directions"></i>
+                                        <span>Buka di Google Maps</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-8 sm:mt-12 px-4">
+                    <div
+                        class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-4 sm:p-6 md:p-8 max-w-7xl mx-auto border border-blue-200">
+
+                        <!-- Judul -->
+                        <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
+                            Lokasi Strategis & Mudah Dijangkau
+                        </h3>
+
+                        <!-- Deskripsi -->
+                        <p class="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6">
+                            Workshop diadakan di lokasi yang nyaman dengan fasilitas lengkap dan akses transportasi
+                            mudah
+                        </p>
+
+                        <!-- Tombol -->
+                        <a href="#registration" onclick="trackingLog('Forward to section registration', 'Daftar @location')"
+                            class="cta-button cta-button-shimmer bg-red-600 hover:bg-red-700 text-white px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 text-sm sm:text-base md:text-lg rounded-lg font-semibold transition-colors shadow-lg inline-flex items-center justify-center">
+                            <i class="fas fa-rocket icon-animate mr-1 sm:mr-2 text-xs sm:text-sm md:text-base"></i>
+                            Daftar Sekarang - Rp 178.450
+                        </a>
+
+                        <!-- Harga -->
+                        <p class="text-base sm:text-lg md:text-xl text-gray-500 mt-4 sm:mt-5">
+                            *Harga spesial <strong>kemerdekaan</strong>.
+                            <span class="line-through text-red-400">Rp 375.000</span> sekarang hanya
+                            <strong>Rp 178.450</strong>!
+                            <span
+                                class="bg-yellow-400 text-red-800 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold">
+                                HEMAT 52%
+                            </span>
+                        </p>
+
+                        <!-- Info Lokasi -->
+                        <p class="text-xs sm:text-sm text-gray-500 mt-4 sm:mt-5">
+                            📍 Bogor, Jawa Barat • 🅿️ Parkir Gratis • 🏢 Ruang AC
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <img src="assets/img/ngodingai17-logo.png" alt="logo">
+                        </div>
+                        <div>
+                            <h3 class="font-bold">NgodingAI By Inovasia</h3>
+                            <p class="text-sm text-gray-400">Merdeka di Setiap Kode!</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Kursus AI coding terdepan di Indonesia untuk developer yang ingin merdeka dari coding manual.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Kontak</h4>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <a href="https://www.instagram.com/ngodingai" target="_blank"><i
+                                class="fab fa-instagram mr-2"></i>@ngodingai</a>
+                        <p><i class="fas fa-envelope mr-2"></i>course@inovasia.co.id</p>
+                        <p><i class="fas fa-phone mr-2"></i>+62 877-6075-9450</p>
+                        <div class="flex items-start space-x-2">
+                            <i class="fas fa-map-marker-alt mt-1"></i>
+                            <span>Ruko Pesona Darussalam Blok A3/1 Lt.2, Waringin Jaya, Kecamatan Bojonggede, Kabupaten
+                                Bogor, Jawa Barat 16920</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-4">Kursus</h4>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p>AI untuk Pemula</p>
+                        <p>Advanced AI Coding</p>
+                        <p>Corporate Training</p>
+                        <p>Private Mentoring</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+                <p>&copy; 2025 NgodingAI by Inovasia Digital Academy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://link.wa-go.com/2VdqrDedBcEx01BL" class="wa-float" target="_blank"
+           onclick="trackingLog('Chat WhatsApp', 'CTA WhatsApp')">
+            <img src="assets/img/wa.png" alt="Chat WhatsApp" class="w-16 h-16">
+        </a>
+    </div>
+
+    <!-- Notifikasi pembelian -->
+    <div id="purchase-notification" 
+        class="fixed top-4 left-2 bg-yellow-400 border border-gray-300 shadow-lg rounded-lg px-4 py-2 text-sm sm:text-base md:text-lg font-bold text-black flex items-center space-x-2 opacity-0 transition-opacity duration-500 z-50">
+        <i class="fas fa-user text-black text-base sm:text-lg md:text-xl"></i>
+        <span id="purchase-text"></span>
+    </div>
+
+    <!-- Modal -->
+    <div id="batchModal" 
+        class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white rounded-lg shadow-lg w-full max-w-lg p-6 relative">
+        <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-xl">&times;</button>
+        
+        <h2 class="text-2xl font-bold mb-2">Form Pendaftaran</h2>
+        <p id="modalBatchName" class="text-lg font-semibold mb-4"></p>
+
+        <form id="batchForm" class="space-y-4">
+        <input type="hidden" name="owner_id" value="4409">
+        <input type="hidden" name="batch_number" id="batch_number">
+        <input type="hidden" name="region_id" id="region_id">
+
+        <div>
+            <label class="block font-semibold">Nama</label>
+            <input type="text" name="customer_name" placeholder="Masukkan nama Anda" class="w-full border p-2 rounded" required>
+        </div>
+        <div>
+            <label class="block font-semibold">No. WhatsApp</label>
+            <input type="text" name="customer_phone" placeholder="08xxxxxxxxxx" class="w-full border p-2 rounded" required pattern="^08\d{9,11}$" title="No. WhatsApp harus diawali dengan 08 dan terdiri dari 11-13 digit angka">
+        </div>
+        <div>
+            <label class="block font-semibold">Email</label>
+            <input type="email" name="customer_email" placeholder="example@gmail.com" class="w-full border p-2 rounded" required>
+        </div>
+        <div>
+            <label class="block font-semibold">Alamat</label>
+            <input type="text" name="customer_address" placeholder="Jl. Kenangan No. 1" class="w-full border p-2 rounded" required>
+        </div>
+        <div>
+            <label class="block font-semibold">Daerah</label>
+            <input type="text" id="region" name="region" placeholder="Contoh: Jakarta Selatan" class="w-full border p-2 rounded" required>
+            <ul id="regionSuggestions" class="border rounded bg-white mt-1 hidden max-h-40 overflow-auto"></ul>
+        </div>
+        <div class="text-right">
+            <button id="modalSubmitBtn" type="submit" class="px-4 py-2 rounded text-white font-semibold" onclick="trackingLog('Add to cart','Click Purchase');">Bayar Disini</button>
+        </div>
+        </form>
+    </div>
+    </div>
+
+<!-- script checkout_duitku -->
+<script src="assets/js/checkout.js"></script>
+<!-- support script -->
+<script src="assets/js/content.js"></script>
+<!-- <script src="assets/js/lock.js"></script> -->
+</body>
+</html>

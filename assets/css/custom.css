@@ -1,0 +1,422 @@
+/* Custom ripple effect */
+@keyframes ripple {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2.4);
+        opacity: 0;
+    }
+}
+
+/* Coding background animation - Enhanced */
+.coding-bg {
+    position: relative;
+    overflow: hidden;
+    background-image: url('../img/coding-bg.jpg'); /* ganti dengan path gambar kamu */
+    background-size: cover;
+    background-position: center;
+}
+
+.coding-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(220, 38, 38, 0.65); /* overlay merah transparan */
+    z-index: 1;
+}
+
+.coding-bg::after {
+    content: 'function aiCoding() {\n  return "Merdeka!";\n}\n\nconst learn = async () => {\n  const skills = await AI.enhance();\n  console.log("Indonesia Merdeka!");\n};\n\nif (coding === true) {\n  success = guaranteed;\n}\n\nwhile (learning) {\n  skills++;\n  productivity *= 3;\n}\n\n// AI Revolution in Indonesia\nimport { ChatGPT, Copilot } from "ai-tools";\n\nexport default function Workshop() {\n  return <div>Ngoding Pakai AI</div>;\n}\n\n<html>\n  <body>\n    <h1>Merdeka di Setiap Kode!</h1>\n  </body>\n</html>\n\nSELECT * FROM knowledge WHERE topic = "AI";\n\ngit commit -m "New AI skills unlocked"\nnpm install @ai/coding-tools\n\n// 17 Agustus - Independence Day\nconst indonesia = {\n  independence: 1945,\n  coding: "with AI",\n  future: "bright"\n};';
+    position: absolute;
+    inset: 0;
+    color: rgba(255,255,255,0.08);
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    padding: 30px;
+    animation: scroll 40s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes scroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+@keyframes scroll {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(-100%); }
+}
+
+/* Enhanced CTA Button Animations */
+.cta-button {
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(220, 38, 38, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(-1px) scale(0.98);
+    transition: all 0.1s ease;
+}
+
+/* Pulse Animation */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3), 0 0 0 0 rgba(220, 38, 38, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4), 0 0 0 10px rgba(220, 38, 38, 0);
+    }
+}
+
+.cta-button-pulse {
+    animation: pulse-glow 2s infinite;
+}
+
+/* Gradient Shift Animation */
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.cta-button-gradient {
+    background: linear-gradient(-45deg, #dc2626, #ef4444, #f87171, #dc2626);
+    background-size: 400% 400%;
+    animation: gradient-shift 3s ease infinite;
+}
+
+/* Bounce Animation */
+@keyframes gentle-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-8px);
+    }
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+.cta-button-bounce:hover {
+    animation: gentle-bounce 1s ease;
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.cta-button-shimmer {
+    background: linear-gradient(90deg, #dc2626 25%, #ef4444 50%, #dc2626 75%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+/* Icon Animations */
+@keyframes icon-bounce {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+}
+
+.cta-button:hover .icon-animate {
+    animation: icon-bounce 0.6s ease-in-out;
+}
+
+/* Glow Effect */
+.cta-button-glow {
+    position: relative;
+}
+
+.cta-button-glow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(45deg, #dc2626, #ef4444, #f87171, #dc2626);
+    background-size: 400% 400%;
+    animation: gradient-shift 3s ease infinite;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cta-button-glow:hover::after {
+    opacity: 1;
+}
+
+/* Gallery Slider Styles */
+.gallery-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-slide {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .gallery-slide {
+        grid-template-columns: 1fr;
+    }
+}
+
+.gallery-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(220, 38, 38, 0.8);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.gallery-nav-btn:hover {
+    background: rgba(220, 38, 38, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav-btn.prev {
+    left: 10px;
+}
+
+.gallery-nav-btn.next {
+    right: 10px;
+}
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.gallery-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.gallery-dot.active {
+    background: #dc2626;
+}
+
+/* Testimonial Slider Styles */
+.testimonial-slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px; /* Add padding for navigation buttons */
+}
+
+.testimonial-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(220, 38, 38, 0.9);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.testimonial-nav-btn:hover {
+    background: rgba(220, 38, 38, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.testimonial-nav-btn.prev {
+    left: 0; /* Changed from -25px to 0 */
+}
+
+.testimonial-nav-btn.next {
+    right: 0; /* Changed from -25px to 0 */
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .testimonial-slider {
+        padding: 0 40px; /* Reduce padding on mobile */
+    }
+    
+    .testimonial-nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-slider {
+        padding: 0 30px; /* Further reduce on small screens */
+    }
+    
+    .testimonial-nav-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+
+.testimonial-slides {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+}
+
+.testimonial-slide {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+    .testimonial-slide {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.testimonial-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #d1d5db;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.testimonial-dot.active {
+    background: #dc2626;
+    border-color: #fca5a5;
+    transform: scale(1.2);
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 2px solid #f3f4f6;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #dc2626, #ef4444, #f87171);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(220, 38, 38, 0.15);
+    border-color: #fca5a5;
+}
+
+/* Gallery modal styles */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.gallery-modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}

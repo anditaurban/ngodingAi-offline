@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pendaftaran Ngoding Pakai AI</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712104.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #090926;
+            background: url('assets/img/contact.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-white">
+    <div class="max-w-xl mx-auto mt-12 bg-white bg-opacity-90 shadow-2xl rounded-xl p-8 text-gray-900">
+        <section id="schedule">
+            <div class="text-center">
+                <div id="register" class="mt-4 text-center">
+                    <!-- <img src="assets/img/inovasia-logo.webp" alt="Inovasia Mini course" class="mx-auto w-40 mb-4"> -->
+
+                    <h2 class="text-3xl font-bold mb-2">Update Payment</h2>
+                    <p class="mb-5">Belajar Online Ngoding Pakai AI</p>
+
+                    <form id="updatePaymentForm" class="space-y-4 text-left max-w-md mx-auto">
+                        <input type="number" id="inv_id" name="inv_id" placeholder="No. INV" maxlength="50" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+
+                        <div class="flex justify-center gap-4 pt-6">
+                            <button type="submit" id="submitButtonQris"
+                                class="bg-indigo-600 text-white font-semibold py-2 px-6 rounded-md hover:bg-indigo-700 transition">
+                                Update Pembayaran
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="assets/js/lock.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById("updatePaymentForm").addEventListener("submit", async function(e) {
+            e.preventDefault(); // prevent default form submission
+
+            const invId = document.getElementById("inv_id").value.trim();
+            if (!invId) {
+                Swal.fire({
+                    icon: "warning",
+                    title: "Oops!",
+                    text: "Masukkan No. INV terlebih dahulu."
+                });
+                return;
+            }
+
+            const apiUrl = `https://dev.katib.cloud/update/checkoutqris/${invId}`;
+            const token = "DpacnJf3uEQeM7HN";
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: "PUT",
+                    headers: {
+                        "Authorization": `Bearer ${token}`
+                    }
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    Swal.fire({
+                    icon: "success",
+                    title: "Berhasil!",
+                    text: "Pembayaran berhasil diupdate!",
+                    timer: 2000,
+                    showConfirmButton: false
+                }).then(() => {
+                    location.reload();
+                });
+                console.log(result);
+                } else {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Gagal",
+                        text: result.message || "Terjadi kesalahan saat mengupdate pembayaran."
+                    });
+                    console.error(result);
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                Swal.fire({
+                    icon: "error",
+                    title: "Kesalahan",
+                    text: "Terjadi kesalahan saat menghubungi server."
+                });
+            }
+        });
+    </script>
+</body>
+</html>
