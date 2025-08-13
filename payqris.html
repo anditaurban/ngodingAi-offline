@@ -36,6 +36,106 @@
         <img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=659512993547676&ev=PageView&noscript=1" />
     </noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- tracking log -->
+    <script>
+        function getFbref() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('fbref');
+    }
+
+    async function trackingLog(activity, cta) {
+        const fbref = getFbref();
+        const landing_page_id = 2;
+        const baseUrl = "https://dev.katib.cloud";
+
+        let locationData = { city: "Unknown", region: "Unknown", country_name: "Unknown" };
+        let locationStr = "Unknown";
+
+        // Ambil IP publik di awal
+        const ip_address = await fetch('https://api64.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => data.ip)
+            .catch(() => 'Unknown');
+
+        // Cek apakah kita sudah pernah minta izin lokasi sebelumnya
+        const locationAllowed = localStorage.getItem("locationPermission") === "granted";
+        const locationDenied = localStorage.getItem("locationPermission") === "denied";
+
+        if (activity === "Landing Page Visit" && !locationAllowed && !locationDenied) {
+            // Hanya minta izin lokasi di visit pertama landing page
+            try {
+                const geoPosition = await new Promise((resolve, reject) => {
+                    navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 5000 });
+                });
+
+                localStorage.setItem("locationPermission", "granted");
+
+                const lat = geoPosition.coords.latitude;
+                const lon = geoPosition.coords.longitude;
+
+                const geoRes = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
+                const geoJson = await geoRes.json();
+
+                locationData = {
+                    city: geoJson.city || geoJson.locality || "Unknown",
+                    region: geoJson.principalSubdivision || "Unknown",
+                    country_name: geoJson.countryName || "Unknown"
+                };
+
+                locationStr = `${locationData.city}, ${locationData.region}, ${locationData.country_name}`;
+            } catch (error) {
+                localStorage.setItem("locationPermission", "denied");
+                console.warn("Lokasi GPS ditolak atau gagal, pakai IP geolocation");
+            }
+        }
+
+        // Kalau izin lokasi sudah disimpan atau CTA klik, langsung pakai IP geolocation
+        if (locationStr === "Unknown") {
+            try {
+                const ipGeoRes = await fetch(`https://ipapi.co/${ip_address}/json/`);
+                const ipGeoJson = await ipGeoRes.json();
+                locationData = {
+                    city: ipGeoJson.city || "Unknown",
+                    region: ipGeoJson.region || "Unknown",
+                    country_name: ipGeoJson.country_name || "Unknown"
+                };
+                locationStr = `${locationData.city}, ${locationData.region}, ${locationData.country_name}`;
+            } catch {
+                console.warn("Gagal ambil lokasi dari IP");
+            }
+        }
+
+        const user_agent = navigator.userAgent;
+        const ads_ref = fbref || 'Direct';
+
+        const data = {
+            ip_address,
+            landing_page_id,
+            location: locationStr,
+            ads_ref,
+            activity,
+            cta,
+            user_agent
+        };
+
+        console.log('Data yang dikirim:', data);
+
+        fetch(`${baseUrl}/add/tracking_page_log`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer DpacnJf3uEQeM7HN'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => console.log('Log berhasil dikirim:', result))
+        .catch(error => console.error('Gagal mengirim log:', error));
+    }
+
+    window.onload = () => trackingLog('Manual payment page visit', 'Qris / Manual transfer Page');
+    </script>
 </head>
 
 <!-- Gantilah bagian dalam <body> dari HTML kamu dengan bagian ini -->
@@ -63,7 +163,7 @@
                             <strong class="text-gray-800">
                                 BCA <span id="rekeningNomor" class="font-mono">8692719645</span> a/n JAGO INOVASI BISNIS PT
                             </strong>
-                            <button id="copyRekening"
+                            <button id="copyRekening" onclick="trackingLog('Click button copy Bank Account','Button Copy Bank Account')"
                                 class="flex items-center px-3 py-1.5 bg-purple-600 text-white text-sm rounded-md hover:bg-pink-700 transition">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none"
                                     viewBox="0 0 24 24" stroke="currentColor">
@@ -76,7 +176,7 @@
                     </ul>
                     <p class="mt-3 text-sm text-gray-600">
                         Setelah transfer atau scan dengan nominal <strong>Rp 178.450,-</strong> harap konfirmasi bukti pembayaran ke
-                        <a href="http://link.wa-go.com/ORJa5bqw8iWgkMqb" class="text-green-800 font-semibold">WhatsApp</a>.
+                        <a href="http://link.wa-go.com/ORJa5bqw8iWgkMqb" onclick="trackingLog('Payment confirmation','Cta WhatsApp Confirmation')" class="text-green-800 font-semibold">WhatsApp</a>.
                     </p>
                 </div>
 
@@ -113,11 +213,11 @@
                 <img src="assets/img/qris-inovasia.jpg" alt="QRIS Inovasia"
                     class="w-80 h-80 object-contain mx-auto cursor-pointer" id="qrisImage" onclick="openModal()" />
                 <div class="text-center mt-3">
-                    <a href="assets/img/qris-inovasia.jpg" download="qris-inovasia.png"
+                    <a href="assets/img/qris-inovasia.jpg" onclick="trackingLog('Click button QRIS Download','Button QRIS Download')" download="qris-inovasia.png"
                         class="inline-block bg-purple-600 text-white text-sm px-4 py-2 rounded hover:bg-pink-700 transition">
                         Download QRIS
                     </a>
-                    <button onclick="openModal()"
+                    <button onclick="openModal(); trackingLog('Click button QRIS Zoom','Button QRIS Zoom')"
                         class="inline-block ml-2 bg-blue-600 text-white text-sm px-4 py-2 rounded hover:bg-blue-700 transition">
                         Perbesar QRIS
                     </button>
@@ -129,7 +229,7 @@
     <!-- Modal Perbesar QR -->
     <div id="qrisModal" class="fixed z-50 inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden">
         <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full">
-            <button onclick="closeModal()"
+            <button onclick="closeModal(); trackingLog('Close QRIS Modal','Close QRIS Modal')" 
                 class="float-right text-gray-600 hover:text-red-600 text-xl font-bold">×</button>
             <img src="assets/img/qris-inovasia.jpg" alt="QRIS Inovasia" class="w-full h-auto mt-4 rounded">
         </div>
