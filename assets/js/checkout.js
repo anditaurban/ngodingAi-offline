@@ -112,8 +112,8 @@ document.getElementById("batchForm").addEventListener("submit", async function(e
     alert("No. WhatsApp harus diawali dengan 08.");
     return;
   }
-  if (phone.length < 11 || phone.length > 13) {
-    alert("No. WhatsApp harus antara 11-13 digit.");
+  if (phone.length < 10 || phone.length > 13) {
+    alert("No. WhatsApp harus antara 10-13 digit.");
     return;
   }
 
