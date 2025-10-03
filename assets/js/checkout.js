@@ -287,7 +287,7 @@ document.getElementById("batchForm").addEventListener("submit", async function(e
           timer: 5000,
           showConfirmButton: false
         }).then(() => {
-          window.location.href = "index.html"; // arahkan ke index
+          window.location.href = "index.html";
         });
         resetButton(submitBtn);
       }
