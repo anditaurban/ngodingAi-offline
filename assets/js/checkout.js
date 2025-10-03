@@ -107,8 +107,102 @@ suggestionsBox.addEventListener("click", (event) => {
   }
 });
 
+// document.getElementById("batchForm").addEventListener("submit", async function(e) {
+//   e.preventDefault();
+
+//   const formData = Object.fromEntries(new FormData(this).entries());
+//   const phone = formData.customer_phone.trim();
+
+//   // Honeypot check
+//   const honeypot = formData.website; 
+//   if (honeypot) {
+//     alert("Data yang anda masukan adalah data palsu."); 
+//     return; // hentikan submit
+//   }
+  
+//   // Validasi nomor HP
+//   if (!/^\d+$/.test(phone)) {
+//     alert("No. WhatsApp hanya boleh berisi angka.");
+//     return;
+//   }
+//   if (!phone.startsWith("08")) {
+//     alert("No. WhatsApp harus diawali dengan 08.");
+//     return;
+//   }
+//   if (phone.length < 10 || phone.length > 13) {
+//     alert("No. WhatsApp harus antara 10-13 digit.");
+//     return;
+//   }
+
+//   if (!formData.region_id) {
+//     alert("Silakan pilih domisili dari daftar saran.");
+//     return;
+//   }
+
+//   const batchProductMap = {
+//     3: 243868,
+//     4: 243869,
+//     7: 243866,
+//     8: 243867,
+
+//   };
+
+//   const batchNumber = Number(formData.batch_number);
+//   const productId = batchProductMap[batchNumber] || 24387;
+
+//   const requestBody = {
+//     owner_id: Number(formData.owner_id),
+//     region_id: Number(formData.region_id),
+//     customer_name: formData.customer_name,
+//     customer_phone: phone,
+//     customer_email: formData.customer_email,
+//     customer_address: formData.customer_address,
+//     sales_detail: [
+//       { product_id: productId, quantity: 1 }
+//     ],
+//     notes: "-"
+//   };
+
+//   try {
+//     const response = await fetch("https://dev.katib.cloud/checkout_duitku/course", {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//         "Authorization": "Bearer DpacnJf3uEQeM7HN"
+//       },
+//       body: JSON.stringify(requestBody)
+//     });
+
+//     const result = await response.json();
+
+//     if (response.ok) {  
+//       trackAddToCart(productId, '178.450');
+//       closeModal();
+//       window.location.href = result.sales.paymentUrl;
+//     } else {
+//       alert(`Gagal: ${result.message || 'Terjadi kesalahan'}`);
+//     }
+//   } catch (error) {
+//     console.error("Error saat mengirim data:", error);
+//     alert("Terjadi kesalahan saat menghubungi server.");
+//   }
+// });
+
 document.getElementById("batchForm").addEventListener("submit", async function(e) {
   e.preventDefault();
+
+  const submitBtn = document.getElementById("modalSubmitBtn");
+  submitBtn.disabled = true;
+  // submitBtn.innerHTML = `<div class="loader"></div> Mohon tunggu...`;
+ submitBtn.innerHTML = `
+  <span class="flex items-center gap-2">
+    <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+    </svg>
+    Pendaftaran diproses...
+  </span>
+`;
 
   const formData = Object.fromEntries(new FormData(this).entries());
   const phone = formData.customer_phone.trim();
@@ -117,25 +211,30 @@ document.getElementById("batchForm").addEventListener("submit", async function(e
   const honeypot = formData.website; 
   if (honeypot) {
     alert("Data yang anda masukan adalah data palsu."); 
-    return; // hentikan submit
+    resetButton(submitBtn);
+    return; 
   }
   
   // Validasi nomor HP
   if (!/^\d+$/.test(phone)) {
     alert("No. WhatsApp hanya boleh berisi angka.");
+    resetButton(submitBtn);
     return;
   }
   if (!phone.startsWith("08")) {
     alert("No. WhatsApp harus diawali dengan 08.");
+    resetButton(submitBtn);
     return;
   }
   if (phone.length < 10 || phone.length > 13) {
     alert("No. WhatsApp harus antara 10-13 digit.");
+    resetButton(submitBtn);
     return;
   }
 
   if (!formData.region_id) {
     alert("Silakan pilih domisili dari daftar saran.");
+    resetButton(submitBtn);
     return;
   }
 
@@ -144,7 +243,6 @@ document.getElementById("batchForm").addEventListener("submit", async function(e
     4: 243869,
     7: 243866,
     8: 243867,
-
   };
 
   const batchNumber = Number(formData.batch_number);
@@ -178,12 +276,38 @@ document.getElementById("batchForm").addEventListener("submit", async function(e
     if (response.ok) {  
       trackAddToCart(productId, '178.450');
       closeModal();
-      window.location.href = result.sales.paymentUrl;
+
+      if (result.sales && result.sales.paymentUrl) {
+        window.location.href = result.sales.paymentUrl;
+      } else {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Maaf',
+          text: 'No WhatsApp tidak valid.',
+          timer: 5000,
+          showConfirmButton: false
+        }).then(() => {
+          window.location.href = "index.html"; // arahkan ke index
+        });
+        resetButton(submitBtn);
+      }
     } else {
-      alert(`Gagal: ${result.message || 'Terjadi kesalahan'}`);
+      Swal.fire({
+        icon: 'error',
+        title: 'Gagal',
+        text: result.message || "Terjadi kesalahan"
+      });
+      resetButton(submitBtn);
     }
+
   } catch (error) {
     console.error("Error saat mengirim data:", error);
     alert("Terjadi kesalahan saat menghubungi server.");
+    resetButton(submitBtn);
   }
 });
+
+function resetButton(btn) {
+  btn.disabled = false;
+  btn.innerHTML = "Bayar Disini";
+}
