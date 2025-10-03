@@ -23,8 +23,6 @@ function trackBatchSelection(batchId, batchName, batchPrice) {
 
   // Mapping warna per batch
   const batchColors = {
-    3: { text: "text-yellow-600", bg: "bg-yellow-500 hover:bg-yellow-600" },
-    4: { text: "text-green-600",  bg: "bg-green-500 hover:bg-green-600" },
     7: { text: "text-yellow-600", bg: "bg-yellow-500 hover:bg-yellow-600" },
     8: { text: "text-green-600",  bg: "bg-green-500 hover:bg-green-600" }
   };
@@ -283,7 +281,7 @@ document.getElementById("batchForm").addEventListener("submit", async function(e
         Swal.fire({
           icon: 'warning',
           title: 'Maaf',
-          text: 'No WhatsApp tidak valid.',
+          text: 'No WhatsApp tidak terdaftar.',
           timer: 5000,
           showConfirmButton: false
         }).then(() => {
