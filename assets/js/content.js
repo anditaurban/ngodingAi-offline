@@ -1,12 +1,39 @@
+function showTab(tab) {
+  // sembunyikan semua konten tab
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+  document.getElementById(tab).classList.remove('hidden');
+
+  // reset semua tombol tab
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.classList.remove("bg-red-600", "text-white");
+    btn.classList.add("bg-white", "text-red-600", "hover:text-red-800");
+  });
+
+  // aktifkan tab yang diklik
+  const activeBtn = document.getElementById("tab-" + tab);
+  activeBtn.classList.remove("bg-white", "text-red-600", "hover:text-red-800");
+  activeBtn.classList.add("bg-red-600", "text-white");
+
+  // ganti keterangan lokasi/platform
+  const locationInfo = document.getElementById("locationInfo");
+  if (tab === "offline") {
+    locationInfo.innerHTML = "📍 Lokasi: Bogor";
+  } else if (tab === "online") {
+    locationInfo.innerHTML = "💻 Via: Zoom";
+  }
+}
+  
 const notif = document.getElementById('purchase-notification');
 const text = document.getElementById('purchase-text');
 
-const names = ["Ahmad", "Siti", "Budi", "Rina", "Andi", "Dewi", "Rudi", "Ayu", "Fajar", "Lina"];
+const names = ["Ahmad", "Karin", "Budi", "Rina", "Andi", "Dewi", "Rudi", "Ayu", "Fajar", "Lina", "Bagus", "Rahma"];
 const cities = ["Jakarta", "Depok", "Bogor", "Tangerang", "Bekasi"];
+
 const batches = [
-    {type: "Offline Batch 1", date: "(16 Agustus 2025)"},
-    {type: "Offline Batch 2", date: "(23 Agustus 2025)"},
-    {type: "Offline Batch 3", date: "(30 Agustus 2025)"}
+    {type: "Offline Batch 7", date: "(11 Okt 2025)"},
+    {type: "Offline Batch 8", date: "(18 Okt 2025)"},
+    {type: "Online Batch 3", date: "( 20, 22, 24 Okt 2025)"},
+    {type: "Online Batch 4", date: "( 27, 29, 31 Okt 2025)"},
 ];
 
 function generatePurchase() {
@@ -200,3 +227,8 @@ setTimeout(showPurchaseNotification, 7000);
             }
         }
     }
+
+    window.addEventListener("load", () => {
+    const el = document.getElementById("batch-scroll");
+    el.scrollLeft = el.scrollWidth; // auto scroll ke ujung kanan
+  });

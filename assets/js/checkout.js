@@ -8,22 +8,32 @@ fbq("track", "AddToCart", {
 });
 }
 
-function trackBatchSelection(batchId, batchName) {
+function addPurchase(productId, price) {
+  fbq("track", "Purchase", {
+    content_ids: [productId],
+    content_type: "product",
+    value: price,
+    currency: "IDR",
+});
+}
+
+function trackBatchSelection(batchId, batchName, batchPrice) {
   const modalName = document.getElementById("modalBatchName");
   const submitBtn = document.getElementById("modalSubmitBtn");
 
   // Mapping warna per batch
   const batchColors = {
-    1: { text: "text-yellow-600", bg: "bg-yellow-500 hover:bg-yellow-600" },
-    2: { text: "text-green-600",  bg: "bg-green-500 hover:bg-green-600" },
-    3: { text: "text-blue-600",   bg: "bg-blue-500 hover:bg-blue-600" }
+    3: { text: "text-yellow-600", bg: "bg-yellow-500 hover:bg-yellow-600" },
+    4: { text: "text-green-600",  bg: "bg-green-500 hover:bg-green-600" },
+    7: { text: "text-yellow-600", bg: "bg-yellow-500 hover:bg-yellow-600" },
+    8: { text: "text-green-600",  bg: "bg-green-500 hover:bg-green-600" }
   };
 
   const colors = batchColors[batchId] || { text: "text-gray-600", bg: "bg-gray-500 hover:bg-gray-600" };
 
   // Set teks nama batch + warna
-  modalName.textContent = `Anda memilih ${batchName}`;
-  modalName.className = `text-lg font-semibold mb-4 ${colors.text}`;
+  modalName.textContent = `Anda memilih ${batchName} | ${batchPrice}`;
+  modalName.className = `text-sm font-semibold mb-4 ${colors.text}`;
 
   // Set warna tombol submit
   submitBtn.className = `px-4 py-2 rounded text-white font-semibold ${colors.bg}`;
@@ -103,6 +113,13 @@ document.getElementById("batchForm").addEventListener("submit", async function(e
   const formData = Object.fromEntries(new FormData(this).entries());
   const phone = formData.customer_phone.trim();
 
+  // Honeypot check
+  const honeypot = formData.website; 
+  if (honeypot) {
+    alert("Data yang anda masukan adalah data palsu."); 
+    return; // hentikan submit
+  }
+  
   // Validasi nomor HP
   if (!/^\d+$/.test(phone)) {
     alert("No. WhatsApp hanya boleh berisi angka.");
@@ -123,9 +140,11 @@ document.getElementById("batchForm").addEventListener("submit", async function(e
   }
 
   const batchProductMap = {
-    1: 24387,
-    2: 24388,
-    3: 24389
+    3: 243868,
+    4: 243869,
+    7: 243866,
+    8: 243867,
+
   };
 
   const batchNumber = Number(formData.batch_number);
